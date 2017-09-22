@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>警情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
+
+    <!--start mergeCss:main.min-->
+    <link rel="stylesheet" type="text/css" href="/public/css/common/layui.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/icomoon/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/common/common.css">
+    <!--end mergeCss-->
+
+    <!--start mergeJs:lib.min-->
+    <script src="/public/js/lib/jquery-1.12.4.js"></script>
+    <script src="/public/js/common/prototype.js"></script>
+    <script src="/public/js/module/lay/layui.js"></script>
+    <!--<script src="/public/js/common/setREM.js"></script>-->
+    <!--end mergeJs-->
+
+
+</head>
+
+<body>
+
+    <!--s:头部-->
+    <header>
+        <div class="welcome">欢迎你，警务编号0122 <a class="edit">[ <span>编辑</span> ]</a></div>
+        <div class="tips"><i class="color-icon-clock"></i> <span class="layui-circle msgNum layui-bg-danger">3</span></div>
+        <div class="right">
+            <div class="search "><input type="text" class="layui-input" placeholder="关键字搜索"><i class="icon-search2"></i></div>
+            <div class="login layui-circle layui-bg-danger">
+                <a href="01login.html"><i class="icon-power"></i></a></div>
+        </div>
+
+    </header>
+    <!--e:头部-->
+
+    <!--s:导航-->
+    <nav>
+        <div class="title">
+            <img src="/public/images/logo.png" alt="">
+        </div>
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-this">
+                <a class="a-wrap" href="02home.html">
+                    <p class="icon-wrap"><i class="icon-home"></i></p>
+                    <p class="text">首页</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="04policeRecord.html">
+                    <p class="icon-wrap"><i class="icon-post"></i></p>
+                    <p class="text">接警登记</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="06.1alarmRecord.html">
+                    <p class="icon-wrap"><i class="icon-form"></i></p>
+                    <p class="text">警情记录</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="07.1supervisionPotal.html">
+                    <p class="icon-wrap"><i class="icon-security"></i></p>
+                    <p class="text">警务监督</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <i class="tips"></i>
+                <a class="a-wrap" href="08overdue.html">
+                    <p class="icon-wrap"><i class="icon-information"></i></p>
+                    <p class="text">超期预警</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="05.1disposalFeedbackSearch.html">
+                    <p class="icon-wrap"><i class="icon-sms"></i></p>
+                    <p class="text">警情处置反馈</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="09dataAnalysis.html">
+                    <p class="icon-wrap"><i class="icon-time"></i></p>
+                    <p class="text">数据分析</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="10.1caseSearch.html">
+                    <p class="icon-wrap"><i class="icon-search1"></i></p>
+                    <p class="text">案件查询</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="11.docManage.html">
+                    <p class="icon-wrap"><i class="icon-note"></i></p>
+                    <p class="text">档案管理</p>
+                </a>
+            </li>
+        </ul>
+
+        <div class="bottom">
+            <a class="a-wrap" href="03.2setSystem.html">
+                <p class="icon-wrap"><i class="icon-set1"></i></p>
+                <p class="text">设置</p>
+            </a>
+        </div>
+    </nav>
+    <!--e:导航-->
+    <!--s:主题部分-->
+    <style  type='text/css'>@charset "UTF-8"; /*../web/01login.css*/.layui-input, .layui-textarea, .layui-select{border: 1px solid #3499cd;} .layui-input:hover, .layui-textarea:hover{border-color: #8bb6d2 !important;} .layui-input:focus, .layui-textarea:focus{border-color: #3c9dcd !important;} nav,header{ display: none; } html{ position: relative; height: 100%; width: 100%; } body{ position: relative; height: 100%; width: 100%; min-width:400px; } .ls-container{ position: absolute; width: 100%; min-height: 540px; height: 100%; padding:0; background: url(/public/images/login/bg.jpg) no-repeat center center; background-size: 100% 100%; } .ls-container .wrap{ position:absolute; top:50%; left:50%; font-size:16px; width: 382px; margin-left: -191px; text-align: center; } .ls-container form{ margin-top:20px; } .ls-container form .layui-btn{ width: 100%; } .ls-container form fieldset{ position: relative; margin:0px; padding: 0px; margin-top:20px; } .ls-container form i{ position: absolute; color:#6fb4ff; left:0; top:50%; font-size:18px; margin-top:-9px; margin-left:10px; } .ls-container form input{ padding-left: 30px; } .ls-container .bottom{ margin-top:30px; font-size: 12px; text-decoration: underline; color: #fff; } </style>
+    <div class='ls-container'>
+	<div class="wrap">
+		<div><img src="/public/images/login/title.png" alt=""></div>
+		<form>
+			<fieldset>
+				<i class="icon-user1"></i><input type="text" class="layui-input" placeholder="请输入警务编号">
+			</fieldset>
+			<fieldset>
+				<i class="icon-lock"></i><input type="text" class="layui-input" placeholder="请输入密码">
+			</fieldset>
+			<fieldset>
+				<a class="layui-btn">登录</a>
+			</fieldset>
+		</form>
+		<div class="bottom">执法公开平台</div>
+	</div>
+</div>
+    
+    <!--e:主题部分-->
+
+</body>
+
+</html>

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>警情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
+
+    <!--start mergeCss:main.min-->
+    <link rel="stylesheet" type="text/css" href="/public/css/common/layui.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/icomoon/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/common/common.css">
+    <!--end mergeCss-->
+
+    <!--start mergeJs:lib.min-->
+    <script src="/public/js/lib/jquery-1.12.4.js"></script>
+    <script src="/public/js/common/prototype.js"></script>
+    <script src="/public/js/module/lay/layui.js"></script>
+    <!--<script src="/public/js/common/setREM.js"></script>-->
+    <!--end mergeJs-->
+
+
+</head>
+
+<body>
+
+    <!--s:头部-->
+    <header>
+        <div class="welcome">欢迎你，警务编号0122 <a class="edit">[ <span>编辑</span> ]</a></div>
+        <div class="tips"><i class="color-icon-clock"></i> <span class="layui-circle msgNum layui-bg-danger">3</span></div>
+        <div class="right">
+            <div class="search "><input type="text" class="layui-input" placeholder="关键字搜索"><i class="icon-search2"></i></div>
+            <div class="login layui-circle layui-bg-danger">
+                <a href="01login.html"><i class="icon-power"></i></a></div>
+        </div>
+
+    </header>
+    <!--e:头部-->
+
+    <!--s:导航-->
+    <nav>
+        <div class="title">
+            <img src="/public/images/logo.png" alt="">
+        </div>
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-this">
+                <a class="a-wrap" href="02home.html">
+                    <p class="icon-wrap"><i class="icon-home"></i></p>
+                    <p class="text">首页</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="04policeRecord.html">
+                    <p class="icon-wrap"><i class="icon-post"></i></p>
+                    <p class="text">接警登记</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="06.1alarmRecord.html">
+                    <p class="icon-wrap"><i class="icon-form"></i></p>
+                    <p class="text">警情记录</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="07.1supervisionPotal.html">
+                    <p class="icon-wrap"><i class="icon-security"></i></p>
+                    <p class="text">警务监督</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <i class="tips"></i>
+                <a class="a-wrap" href="08overdue.html">
+                    <p class="icon-wrap"><i class="icon-information"></i></p>
+                    <p class="text">超期预警</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="05.1disposalFeedbackSearch.html">
+                    <p class="icon-wrap"><i class="icon-sms"></i></p>
+                    <p class="text">警情处置反馈</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="09dataAnalysis.html">
+                    <p class="icon-wrap"><i class="icon-time"></i></p>
+                    <p class="text">数据分析</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="10.1caseSearch.html">
+                    <p class="icon-wrap"><i class="icon-search1"></i></p>
+                    <p class="text">案件查询</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="11.docManage.html">
+                    <p class="icon-wrap"><i class="icon-note"></i></p>
+                    <p class="text">档案管理</p>
+                </a>
+            </li>
+        </ul>
+
+        <div class="bottom">
+            <a class="a-wrap" href="03.2setSystem.html">
+                <p class="icon-wrap"><i class="icon-set1"></i></p>
+                <p class="text">设置</p>
+            </a>
+        </div>
+    </nav>
+    <!--e:导航-->
+    <!--s:主题部分-->
+    <style  type='text/css'>@charset "UTF-8"; /*../web/03.5setPermissionAssign.css*/  .midde-gray{ background:#fafafa;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;padding:20px 0; } .midde-gray .layui-input-block{ margin-left:0px; margin-bottom: 15px; } /*../web/blueForm.css*/.ls-container .layui-form { border: 1px solid #e2e2e2; padding: 0; margin-top: 1rem; } .layui-form-item-wrap { max-width: 788px; margin-left: auto; margin-right: auto; } .layui-form .layui-form-item.title { padding-left: 10px; height: 2.5rem; line-height: 2.5rem; background: #eeeeee; } .ls-container .layui-form.no-border { border: none; } .layui-form-item .layui-form .layui-input-inline { width: 217px; margin-right: 0;  } .ls-container .layui-form-checkbox { position: relative; display: inline-block; vertical-align: middle; height: 22px; line-height: 22px; margin: 0px 0px 0 10px; padding-right: 22px; text-align: center; -moz-box-shadow: 1px 1px 4px #999 inset;  -webkit-box-shadow: 1px 1px 4px #999 inset;  box-shadow: 1px 1px 4px #999 inset; } .ls-container .layui-form-checkbox i { font-size: 16px; right: -3px; } .layui-form-radioed i, .layui-form-radio i:hover { color: #797979; } .ls-container .layui-form-checked, .ls-container .layui-form-checked:hover { border: 1px solid #c2c2c2; } .ls-container .layui-form-checked i, .ls-container .layui-form-checked:hover i { color: #0a3174; } .layui-form-title { position: relative; background: #0aa5ff; color: #fff; padding: 0.4rem 0; text-align: center } .layui-form-title h3 { font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0; } @media screen and (max-width: 1200px) { .layui-form-search-center { width: 640px; margin: 0 auto; } } @media screen and (min-width: 1200px) { .layui-form-search-center { width: 1080px; margin: 0 auto; } } @media screen and (max-width: 1387px) { .layui-form-search-center-comb { width: 660px; margin: 0 auto; } .layui-form-search-center-comb .layui-form-text div.layui-input-inline{ width:521px } } @media screen and (min-width: 1387px) { .layui-form-search-center-comb { width: 1160px; margin: 0 auto; } .layui-form-search-center-comb .layui-form-text div.layui-input-inline{ width:610px; } } @media screen and (max-width: 1250px) { .layui-form-search-center-three { width: 740px; margin: 0 auto; } .layui-form-text div.layui-input-inline{ width:584px; } .layui-form-search-center-three.layui-form-biger-label-wrap{ width: 757px; margin: 0 auto; } .layui-form-search-center-three .layui-form-text div.layui-input-inline{ width:610px; } .layui-form-search-center-three.layui-form-biger-label-wrap .layui-form-text div.layui-input-inline{ width:596px } } @media screen and (min-width: 1250px) { .layui-form-search-center-three { width: 1104px; margin: 0 auto; } .layui-form-text div.layui-input-inline{ width:952px; } .layui-form-search-center-three.layui-form-biger-label-wrap{ width: 1134px; margin: 0 auto; } .layui-form-search-center-three .layui-form-text div.layui-input-inline{ width:978px; } .layui-form-search-center-three.layui-form-biger-label-wrap .layui-form-text div.layui-input-inline{ width:975px } } .layui-form-search-center-comb div.layui-input-inline { width: 160px; } .layui-form-long-label .layui-form-label, .layui-form-search-center-three .layui-form-label, .layui-form-search-center-comb .layui-form-label { width: 115px; } .layui-form-biger-label-wrap .layui-form-label{ width: 128px } .layui-form .searchList .layui-input-inline, .layui-form .searchList .layui-inline { margin-right: 0; } .subBtn{ min-width: 100px; } /*../web/blueTable.css*/.layui-table-blue .layui-table thead tr { background-color: #0aa5ff; color:#fff; } .layui-table-blue .layui-table th{ font-weight: 400; } .layui-table-blue .layui-table tfoot,.layui-table-blue .layui-table tfoot td{ border-bottom: none; } .layui-table-blue .pageFooter-wrap{ position:relative; min-height:34px; } .layui-table-blue .pageFooter{ position: absolute; left:0; width: 100%; bottom:0; text-align: center; } .layui-table-blue .layui-laypage span, .layui-laypage a{ margin: 0 0 0 10px; height: 35px; line-height: 35px; } .layui-table-blue .layui-laypage { margin: 0; } .layui-table-blue .layui-laypage .layui-laypage-curr .layui-laypage-em { background-color: #0aa5ff; } .layui-table-blue .layui-laypage-total-num{ color:#6cc9fe; margin:0 5px; } .layui-table-blue .layui-table .btn-wrap{ width:100px; } .layui-table-gray-title tr td.title{ background: #eee; text-align: right; min-width:140px; width: 14%; } .layui-table-blue .layui-table .btn-wrap-three{ width:125px; } .layui-table-blue .layui-table .lay-input-block{ margin-left:125px; } .layui-table-gray-title tr td{ width:16%;} .layui-table-gray-title tr:hover { background-color: transparent; } .layui-table-wrap{ overflow:auto;} /*../web/03.3setPermission.css*/   .ls-container .permissionItem{ margin-top: 1.25rem; } .ls-container .permissionItem>span{ display: inline-block; vertical-align: middle; } .ls-container .subBtn{ padding: 0 37px; } .ls-container .subBtn-wrap{  background: #eeeeee; margin:0; padding: 2rem 0 3.5rem 0; }  .ls-container .layui-form-item.setPermission .layui-input-inline { width: 290px; } /*../web/03.2setSystem.css*/  hr { background-color: #f2f2f2; } .layui-table thead tr { background-color: #e8f2fc; } .layout-tab-title li { padding: 0 10px 0 0px; } .layui-tab-content { margin-top: 20px; padding: 0px; } .layui-tab-content .layui-tab-content-wrap { padding: 20px; border: 1px solid #e2e2e2; } .subBtn-wrap { padding: 10px 0 30px 0; background: #eee; margin: 0 } .subBtn-wrap .layui-btn { min-width: 100px } .layui-tab { overflow: visible; } </style>
+    <div class='ls-container'>
+
+	<div class="layui-tab btn-group-tab" lay-filter="setting">
+		<ul class="layui-tab-title">
+			<li class="layui-this"><a class="layui-btn layui-btn-normal"><i class="icon-right-dir"></i>系统信息</a></li>
+			<li><a class="layui-btn layui-btn-normal">权限设置</a></li>
+			<li><a class="layui-btn layui-btn-normal">人员列表</a></li>
+			<li><a class="layui-btn layui-btn-normal">账号分配</a></li>
+			<li><a class="layui-btn layui-btn-normal">系统日志</a></li>
+		</ul>
+		<div class="layui-tab-content">
+			<!--s:tab1 系统信息-->
+			<div class="layui-tab-item layui-show">
+				<div class="layui-tab-content-wrap tab-item-min-height">
+					<table class="layui-table" lay-skin="line">
+						<colgroup>
+							<col width="150">
+							<col width="200">
+							<col>
+						</colgroup>
+						<thead>
+						<tr>
+							<th>服务器属性</th>
+							<th></th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>当前时间：</td>
+							<td>2016-11-29 16:30</td>
+						</tr>
+						<tr>
+							<td>存储空间：</td>
+							<td>80G</td>
+						</tr>
+						<tr>
+							<td>服务器名称：</td>
+							<td>192.180.2.2</td>
+						</tr>
+						<tr>
+							<td>内网地址：</td>
+							<td>192.180.2.2</td>
+						</tr>
+						</tbody>
+					</table>
+
+					<table class="layui-table" lay-skin="line">
+						<colgroup>
+							<col width="150">
+							<col width="200">
+							<col>
+						</colgroup>
+						<thead>
+						<tr>
+							<th>服务器端口</th>
+							<th></th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1：IP：端口：安全性</td>
+							<td>192.180.2.4：8000 正常</td>
+						</tr>
+						<tr>
+							<td>2：IP：端口：安全性</td>
+							<td>192.180.2.4：8000 正常</td>
+
+						</tr>
+						</tbody>
+					</table>
+
+					<table class="layui-table" lay-skin="line">
+						<colgroup>
+							<col width="150">
+							<col width="200">
+							<col>
+						</colgroup>
+						<thead>
+						<tr>
+							<th>环境</th>
+							<th></th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>版本：</td>
+							<td>1.5.0 Sun Microsystems Inc</td>
+						</tr>
+						<tr>
+							<td>OS/硬件：</td>
+							<td>Windows Server 2003 Datacenter Edition</td>
+						</tr>
+						<tr>
+							<td>语言环境/时区：</td>
+							<td>zh_CN/中国标准时间（8 GMT）</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--e:tab1 系统信息-->
+
+			<!--s:tab2权限设置-->
+			<div class="layui-tab-item layui-table-blue">
+				<form class="layui-form layui-form-pane1" action="">
+					<div class="layui-form-item mt20">
+						<label class="layui-form-label">权限名称：</label>
+						<div class="layui-input-inline ">
+							<input type="text" name="title" lay-verify="title" required="" placeholder="文档管理员"
+								   autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">功能权限：</label>
+						<div class="layui-input-block">
+							<div class="permissionItem" style="padding-top: 9px;">
+								<span class="mr10 layui-text-normal">接警登记</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>新增</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>编辑</span>
+							</div>
+							<div class="permissionItem">
+								<span class="mr10 layui-text-normal">警情记录</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查看</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查询</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>新增</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>导出</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>打印</span>
+							</div>
+							<div class="permissionItem">
+								<span class="mr10 layui-text-normal">警务监督</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查看</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查询</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>发送短信</span>
+							</div>
+							<div class="permissionItem">
+								<span class="mr10 layui-text-normal">超期预警</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查看</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查询</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>发送短信</span>
+							</div>
+							<div class="permissionItem">
+								<span class="mr10 layui-text-normal">警情处置</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查询</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>反馈</span>
+							</div>
+							<div class="permissionItem">
+								<span class="mr10 layui-text-normal">数据分析</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查看</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查询</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>导出</span>
+							</div>
+							<div class="permissionItem">
+								<span class="mr10 layui-text-normal">文档管理</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查看</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>查询</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>新增</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>修改</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>删除</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>导入</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>导出</span>
+							</div>
+							<div class="permissionItem">
+								<span class="mr10 layui-text-normal">系统设置</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>权限修改</span>
+								<input type="checkbox">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span>账号分配</span>
+							</div>
+						</div>
+
+					</div>
+					<div class="layui-form-item subBtn-wrap">
+						<div class="layui-input-block">
+							<button class="layui-btn subBtn" lay-submit="" lay-filter="*">确定</button>
+						</div>
+					</div>
+				</form>
+
+				<table class="layui-table">
+
+					<thead>
+					<tr>
+						<th>编号</th>
+						<th>权限组</th>
+						<th>功能权限</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>1</td>
+						<td>高级管理员</td>
+						<td>接警登记:新增，警情记录:查看,查询,新增,修改,删除,导出，警情处置:反馈,查询，警务监督:查看，数据分析:查看,查询,导出...</td>
+						<td>
+							<div class="btn-wrap">
+								<a class="layui-text-warn layui-link">编辑</a><a
+									class="layui-text-warn layui-link">删除</a>
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--e:tab2-->
+
+			<!--s:tab3人员分配-->
+			<div class="layui-tab-item layui-table-blue">
+				<form class="layui-form layui-form-pane1 tab-item-min-height" action="">
+					<div class="layui-form-item searchList">
+						<div class="search-middle-gray ptb20">
+							<div class="layui-form-search-center ">
+								<div class="layui-inline">
+									<label class="layui-form-label">姓名：</label>
+									<div class="layui-input-inline">
+										<input type="text" name="title" lay-verify="title" required="" placeholder=""
+											   autocomplete="off" class="layui-input">
+									</div>
+								</div>
+
+								<div class="layui-inline">
+									<label class="layui-form-label">权限组：</label>
+									<div class="layui-input-inline">
+										<select name="quiz">
+											<option value="">全部</option>
+											<option value="你工作的第一个城市">你工作的第一个城市</option>
+											<option value="你的工号" disabled="">你的工号</option>
+											<option value="你最喜欢的老师">你最喜欢的老师</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="layui-inline">
+									<label class="layui-form-label">按地市：</label>
+									<div class="layui-input-inline">
+										<select name="quiz">
+											<option value="">全部</option>
+											<option value="你工作的第一个城市">你工作的第一个城市</option>
+											<option value="你的工号" disabled="">你的工号</option>
+											<option value="你最喜欢的老师">你最喜欢的老师</option>
+										</select>
+										<div class="layui-unselect layui-form-select">
+											<div class="layui-select-title"><input type="text" placeholder="请选择问题" value=""
+																				   readonly=""
+																				   class="layui-input layui-unselect"><i
+													class="layui-edge"></i></div>
+											<dl class="layui-anim layui-anim-upbit">
+												<dd lay-value="你工作的第一个城市" class="">你工作的第一个城市</dd>
+												<dd lay-value="你的工号" class=" layui-disabled">你的工号</dd>
+												<dd lay-value="你最喜欢的老师" class="">你最喜欢的老师</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+
+								<div class="layui-inline">
+									<label class="layui-form-label">行政区划：</label>
+									<div class="layui-input-inline">
+										<select name="quiz">
+											<option value="">全部</option>
+											<option value="你工作的第一个城市">你工作的第一个城市</option>
+											<option value="你的工号" disabled="">你的工号</option>
+											<option value="你最喜欢的老师">你最喜欢的老师</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="layui-inline">
+									<label class="layui-form-label">管辖单位：</label>
+									<div class="layui-input-inline">
+										<select name="quiz">
+											<option value="">全部</option>
+											<option value="你工作的第一个城市">你工作的第一个城市</option>
+											<option value="你的工号" disabled="">你的工号</option>
+											<option value="你最喜欢的老师">你最喜欢的老师</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="layui-form-search-footer tc mt10 mb30">
+							<div class="layui-inline">
+								<a class="layui-btn layui-btn-opa mr30">筛选</a>
+							</div>
+							<div class="fr mr30">
+								<a class="layui-btn layui-btn-opa-icon"><span class="color-icon-save"></span>导出</a>
+							</div>
+						</div>
+					</div>
+					<div class="layui-table-wrap">
+						<table class="layui-form layui-table" lay-even>
+							<thead>
+							<tr>
+								<th>
+									<input type="checkbox" class="layui-select-all">
+									<div class="layui-unselect layui-form-checkbox layui-form-checked " data-target=""><i
+											class="layui-icon"></i></div>
+								</th>
+								<th>自动编号</th>
+								<th>姓名</th>
+								<th>警务编号</th>
+								<th>性别</th>
+								<th>身份证号</th>
+								<th>手机号</th>
+								<th>所属地市</th>
+								<th>行政区划</th>
+								<th>管辖单位</th>
+								<th>职务</th>
+								<th>权限组</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									<input type="checkbox">
+									<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+											class="layui-icon"></i></div>
+								</td>
+								<td>1</td>
+								<td>王国强</td>
+								<td>401094</td>
+								<td>男</td>
+								<td>40109198812209374</td>
+								<td>13899475002</td>
+								<td>太原市</td>
+								<td>迎泽分局</td>
+								<td>柳港派出所</td>
+								<td>警务员</td>
+								<td>警务员</td>
+								<td>
+									<div class="btn-wrap">
+										<a class="layui-text-warn layui-link">编辑</a><a
+											class="layui-text-warn layui-link">删除</a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox">
+									<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+											class="layui-icon"></i></div>
+								</td>
+								<td>1</td>
+								<td>王国强</td>
+								<td>401094</td>
+								<td>男</td>
+								<td>40109198812209374</td>
+								<td>13899475002</td>
+								<td>太原市</td>
+								<td>迎泽分局</td>
+								<td>柳港派出所</td>
+								<td>警务员</td>
+								<td>警务员</td>
+								<td>
+									<div class="btn-wrap">
+										<a class="layui-text-warn layui-link">编辑</a><a
+											class="layui-text-warn layui-link">删除</a>
+									</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+						<div class="layui-form no-border  pageFooter-wrap">
+							<div class="layui-inline" style="z-index: 1">
+								<input type="checkbox" class="layui-select-all">
+								<div class="layui-unselect layui-form-checkbox layui-form-checked"><i
+										class="layui-icon"></i></div>
+								<span class="mr30">全选</span>
+								<a class="layui-btn layui-btn-opa mr30 delSelectItem">删除所选</a>
+							</div>
+
+							<div class="pageFooter"></div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!--e:tab3-->
+
+			<!--s:tab4 账号分配（权限设置分配旧）-->
+			<div class="layui-tab-item layui-table-blue ">
+
+				<form class="layui-form layui-form-pane1" action="">
+
+					<div class="layui-form-item mt20">
+						<div class="layui-inline">
+							<label class="layui-form-label">警务编号：</label>
+							<div class="layui-input-inline ">
+								<input type="text" name="title" lay-verify="title" required="" placeholder=""
+									   autocomplete="off"
+									   class="layui-input">
+							</div>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">登录密码：</label>
+							<div class="layui-input-inline ">
+								<input type="text" name="title" lay-verify="title" required="" placeholder=""
+									   autocomplete="off"
+									   class="layui-input">
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">确认密码：</label>
+							<div class="layui-input-inline ">
+								<input type="text" name="title" lay-verify="title" required="" placeholder=""
+									   autocomplete="off"
+									   class="layui-input">
+							</div>
+						</div>
+					</div>
+
+					<div class="layui-form-item midde-gray">
+						<div class="layui-input-block">
+							<div class="layui-inline">
+								<label class="layui-form-label">姓名：</label>
+								<div class="layui-input-inline ">
+									<input type="text" name="title" lay-verify="title" required="" placeholder=""
+										   autocomplete="off"
+										   class="layui-input">
+								</div>
+							</div>
+
+							<div class="layui-inline">
+								<label class="layui-form-label">性别：</label>
+								<div class="layui-input-inline ">
+									<input type="radio" name="sex" value="男" title="男">
+									<div class="layui-unselect layui-form-radio"><i
+											class="layui-anim layui-icon"></i><span>男</span></div>
+									<input type="radio" name="sex" value="女" title="女" checked="">
+									<div class="layui-unselect layui-form-radio layui-form-radioed"><i
+											class="layui-anim layui-icon"></i><span>女</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="layui-input-block">
+							<div class="layui-inline">
+								<label class="layui-form-label">身份证号：</label>
+								<div class="layui-input-inline ">
+									<input type="text" name="title" lay-verify="title" required="" placeholder=""
+										   autocomplete="off"
+										   class="layui-input">
+								</div>
+							</div>
+
+							<div class="layui-inline">
+								<label class="layui-form-label">手机号：</label>
+								<div class="layui-input-inline ">
+									<input type="text" name="title" lay-verify="title" required="" placeholder=""
+										   autocomplete="off"
+										   class="layui-input">
+								</div>
+							</div>
+						</div>
+						<div class="layui-input-block">
+							<div class="layui-inline">
+								<label class="layui-form-label">所属地市：</label>
+								<div class="layui-input-inline ">
+									<input type="text" name="title" lay-verify="title" required="" placeholder=""
+										   autocomplete="off"
+										   class="layui-input">
+								</div>
+							</div>
+
+							<div class="layui-inline">
+								<label class="layui-form-label">行政分区：</label>
+								<div class="layui-input-inline ">
+									<input type="text" name="title" lay-verify="title" required="" placeholder=""
+										   autocomplete="off"
+										   class="layui-input">
+								</div>
+							</div>
+						</div>
+						<div class="layui-input-block">
+							<div class="layui-inline">
+								<label class="layui-form-label">管辖单位：</label>
+								<div class="layui-input-inline ">
+									<input type="text" name="title" lay-verify="title" required="" placeholder=""
+										   autocomplete="off"
+										   class="layui-input">
+								</div>
+							</div>
+							<div class="layui-inline">
+								<label class="layui-form-label">职务：</label>
+								<div class="layui-input-inline ">
+									<input type="text" name="title" lay-verify="title" required="" placeholder=""
+										   autocomplete="off"
+										   class="layui-input">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">权限组：</label>
+							<div class="layui-input-inline">
+								<select name="quiz">
+									<option value="">请选择</option>
+									<option value="你工作的第一个城市">你工作的第一个城市</option>
+									<option value="你的工号" disabled="">你的工号</option>
+									<option value="你最喜欢的老师">你最喜欢的老师</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="layui-form-item subBtn-wrap">
+						<div class="layui-input-block">
+							<button class="layui-btn subBtn" lay-submit="" lay-filter="*">确定</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!--e:tab4 账号分配（权限设置分配旧）-->
+
+			<!--s:tab5-->
+			<div class="layui-tab-item"></div>
+			<!--e:tab5-->
+		</div>
+	</div>
+
+</div>
+
+    <script>$(function(){;(function(){ var innerModule = {};var innerRequire = function(index){ return innerModule[index]; }; /*../web/useForm.js*/(function() {
+    layui.use("form", function() {
+        var form = layui.form();
+        form.verify({
+            title: function(value) {
+                if (value.length < 5) {
+                    return "标题也太短了吧";
+                }
+            },
+            pass: [ /(.+){6,12}$/, "密码必须6到12位" ]
+        });
+        form.on("checkbox", function(data) {
+            var $check;
+            var $parent = $(data.elem).parents(".layui-table");
+            var $item = $parent.find("tbody").find("input[type=checkbox]");
+            var $allCheckbox = $parent.find("input[type=checkbox]");
+            if ($(data.elem).hasClass("layui-select-all")) {
+                if (data.elem.checked) {
+                    $check = $allCheckbox.filter(function() {
+                        return this.checked == false;
+                    });
+                } else {
+                    $check = $allCheckbox.filter(function() {
+                        return this.checked == true;
+                    });
+                }
+                $check.trigger("click").next().toggleClass("layui-form-checked");
+            } else {
+                checkSelect($item, $parent);
+            }
+        });
+        function checkSelect($item, $parent) {
+            var count = 0;
+            $item.each(function(index, check) {
+                if (check.checked) {
+                    count++;
+                }
+            });
+            if (count == $item.length) {
+                $parent.find(".layui-select-all").filter(function() {
+                    return this.checked == false;
+                }).trigger("click").next().toggleClass("layui-form-checked");
+            } else {
+                $parent.find(".layui-select-all").filter(function() {
+                    return this.checked == true;
+                }).trigger("click").next().toggleClass("layui-form-checked");
+            }
+        }
+        $(".delSelectItem").click(function() {
+            var $parent = $(this).parents(".layui-table");
+            var $item = $parent.find("tbody").find("input[type=checkbox]").filter(function() {
+                return this.checked == true;
+            });
+            $item.each(function() {
+                $(this).parents("tr").remove();
+            });
+            $parent.find(".layui-select-all").trigger("click").next().toggleClass("layui-form-checked");
+        });
+        form.on("submit(*)", function(data) {
+            console.log(data);
+            return false;
+        });
+    });
+})();;/*../web/usePage.js*/(function() {
+    layui.use([ "laypage" ], function() {
+        var laypage = layui.laypage;
+        laypage({
+            cont: $(".pageFooter"),
+            pages: 10,
+            showTotal: true,
+            total: 20,
+            showPervAway: true,
+            first: false,
+            last: false
+        });
+    });
+})();;/*../web/03.5setPermissionAssign.js*/(function() {
+    innerRequire(3);
+    innerRequire(2);
+})();;/*../web/03.2setSystem.js*/(function() {
+    innerRequire(1);
+    innerRequire(-1);
+    innerRequire(-1);
+})();})();})</script>
+    <!--e:主题部分-->
+
+</body>
+
+</html>

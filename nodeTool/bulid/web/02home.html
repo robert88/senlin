@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>警情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
+
+    <!--start mergeCss:main.min-->
+    <link rel="stylesheet" type="text/css" href="/public/css/common/layui.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/icomoon/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/common/common.css">
+    <!--end mergeCss-->
+
+    <!--start mergeJs:lib.min-->
+    <script src="/public/js/lib/jquery-1.12.4.js"></script>
+    <script src="/public/js/common/prototype.js"></script>
+    <script src="/public/js/module/lay/layui.js"></script>
+    <!--<script src="/public/js/common/setREM.js"></script>-->
+    <!--end mergeJs-->
+
+
+</head>
+
+<body>
+
+    <!--s:头部-->
+    <header>
+        <div class="welcome">欢迎你，警务编号0122 <a class="edit">[ <span>编辑</span> ]</a></div>
+        <div class="tips"><i class="color-icon-clock"></i> <span class="layui-circle msgNum layui-bg-danger">3</span></div>
+        <div class="right">
+            <div class="search "><input type="text" class="layui-input" placeholder="关键字搜索"><i class="icon-search2"></i></div>
+            <div class="login layui-circle layui-bg-danger">
+                <a href="01login.html"><i class="icon-power"></i></a></div>
+        </div>
+
+    </header>
+    <!--e:头部-->
+
+    <!--s:导航-->
+    <nav>
+        <div class="title">
+            <img src="/public/images/logo.png" alt="">
+        </div>
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-this">
+                <a class="a-wrap" href="02home.html">
+                    <p class="icon-wrap"><i class="icon-home"></i></p>
+                    <p class="text">首页</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="04policeRecord.html">
+                    <p class="icon-wrap"><i class="icon-post"></i></p>
+                    <p class="text">接警登记</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="06.1alarmRecord.html">
+                    <p class="icon-wrap"><i class="icon-form"></i></p>
+                    <p class="text">警情记录</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="07.1supervisionPotal.html">
+                    <p class="icon-wrap"><i class="icon-security"></i></p>
+                    <p class="text">警务监督</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <i class="tips"></i>
+                <a class="a-wrap" href="08overdue.html">
+                    <p class="icon-wrap"><i class="icon-information"></i></p>
+                    <p class="text">超期预警</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="05.1disposalFeedbackSearch.html">
+                    <p class="icon-wrap"><i class="icon-sms"></i></p>
+                    <p class="text">警情处置反馈</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="09dataAnalysis.html">
+                    <p class="icon-wrap"><i class="icon-time"></i></p>
+                    <p class="text">数据分析</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="10.1caseSearch.html">
+                    <p class="icon-wrap"><i class="icon-search1"></i></p>
+                    <p class="text">案件查询</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="11.docManage.html">
+                    <p class="icon-wrap"><i class="icon-note"></i></p>
+                    <p class="text">档案管理</p>
+                </a>
+            </li>
+        </ul>
+
+        <div class="bottom">
+            <a class="a-wrap" href="03.2setSystem.html">
+                <p class="icon-wrap"><i class="icon-set1"></i></p>
+                <p class="text">设置</p>
+            </a>
+        </div>
+    </nav>
+    <!--e:导航-->
+    <!--s:主题部分-->
+    <style  type='text/css'>@charset "UTF-8"; /*../web/02home.css*/.ls-container .top-group{ margin:3.75rem 0; font-size: 14px;  } .ls-container .top-group:after{ content: " "; clear: both; display: block; } .ls-container .top-group li{ float:left; width:33.33%; position:relative; } .ls-container .top-group li:after{ content: " "; position: absolute; left:0; right: 30px; top:0; bottom: 0; border:1px solid #eee; } .ls-container .top-group .title{ position:relative; display: inline-block; vertical-align: middle; width: 30.769%; padding-top:30.769%; } .ls-container .top-group .title>i{ position: absolute; left:50%; top:50%; font-size: 3rem; margin-left:-1.5rem; margin-top:-1.5rem; } .ls-container .top-group .info{ display: inline-block; vertical-align: middle; margin-left:4%; } .ls-container .top-group .text{ line-height: 1.5rem; } .ls-container .top-group .num{ font-size: 2rem; color:#333 } .ls-container .top-group .text>i{ color:#333; } .ls-container h3{ font-size: 1.5rem; }    .ls-container .lastly .layui-tab-brief > .layui-tab-title .layui-this { color: #4085c8; } .ls-container .lastly .layui-tab-brief > .layui-tab-title .layui-this:after, .ls-container .lastly .layui-tab-brief > .layui-tab-more li.layui-this:after { border-bottom: 3px solid #4085c8; } .ls-container .lastly .layui-tab-title { border-bottom:none; } .ls-container .lastly .layui-tab-content{  height:26rem; } .ls-container .lastly .layui-tab-content .layui-tab-item{ height: 100%; width: 100%; } .layui-bg-set2{ background: #ffcc01; color:#fff; } </style>
+    
+<div class='ls-container'>
+	<ul class="top-group">
+		<li>
+			<div class="title layui-bg-danger"><i class="icon-information"></i></div>
+			<div class="info">
+				<p class="text">超期预警提示</p>
+				<p class="num">3</p>
+			</div>
+		</li>
+		<li>
+			<div class="title layui-bg-green"><i class="icon-remind"></i></div>
+			<div class="info">
+				<p class="text">今日警情处理</p>
+				<p class="num">3/20</p>
+			</div>
+		</li>
+		<li>
+			<div class="title layui-bg-wran"><i class="icon-set2"></i></div>
+			<div class="info">
+				<p class="text">系统设置 <i class="icon-right-dir"></i></p>
+				<p class="text">权限设置 <i class="icon-right-dir"></i></p>
+				<p class="text">账号分配 <i class="icon-right-dir"></i></p>
+			</div>
+		</li>
+	</ul>
+
+	<div class="lastly">
+		<h3>最近一个月接处警情况分析</h3>
+		<div class="layui-tab layui-tab-brief" lay-filter="test">
+			<ul class="layui-tab-title">
+				<li class="">综合分析</li>
+				<li class="">警情</li>
+				<li class="layui-this">处理</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item policeCaseAnalysis"></div>
+				<div class="layui-tab-item policeCase" ></div>
+				<div class="layui-tab-item layui-show policeCaseHandler"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <script>$(function(){;(function(){ var innerModule = {};var innerRequire = function(index){ return innerModule[index]; }; /*../web/02home.js*/(function() {
+    var resizeMap = [];
+    layui.use("element", function() {
+        var element = layui.element();
+        element.on("tab(test)", function(data) {
+            var $lis = $(this).parents(".layui-tab").find(".layui-tab-content").find(".layui-tab-item");
+            var index = $(this).index();
+            var $curLi = $lis.eq(index);
+            if (!$curLi.data("initChat") && $lis.length > index) {
+                resizeMap.push({
+                    chart: initChart($curLi.get(0)),
+                    target: $curLi
+                });
+                $curLi.data("initChat", resizeMap[resizeMap.length - 1].chart);
+            } else {
+                $curLi.data("initChat").resize();
+            }
+        });
+        element.on("nav(test)", function(elem) {
+            console.log(elem);
+        });
+    });
+    layui.use("echart", function() {
+        var $first = $(".policeCaseHandler.layui-tab-item");
+        resizeMap.push({
+            chart: initChart($first.get(0)),
+            target: $first
+        });
+        $first.data("initChat", resizeMap[resizeMap.length - 1].chart);
+        var timer;
+        $(window).on("resize", function() {
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                for (var i = 0; i < resizeMap.length; i++) {
+                    if (resizeMap[i].target.is(":visible") && resizeMap[i].chart) {
+                        resizeMap[i].chart.resize();
+                    }
+                }
+            }, 100);
+        });
+    });
+    function initChart(dom) {
+        var myChart = echarts.init(dom);
+        var cur = new Date;
+        var maxDay = (new Date(cur.getFullYear(), cur.getMonth(), 0)).getDate();
+        var nextDay = (new Date(cur.setMonth(cur.getMonth() + 1))).getDate();
+        var days = function() {
+            var temp = [];
+            for (var i = cur.getDate(); i < maxDay; i++) {
+                temp.push(i.toString().fill("00"));
+            }
+            for (var i = 0; i < nextDay; i++) {
+                temp.push(i.toString().fill("00"));
+            }
+            return temp;
+        }();
+        var data = [];
+        for (var i = 0; i < days.length; i++) {
+            data.push([ days[i], i ]);
+        }
+        var option = {
+            tooltip: {
+                trigger: "axis",
+                formatter: function(params, ticket, callback) {
+                    var series = params[0];
+                    return series.seriesName + "<br>日期：" + series.value[0] + " <br>值：" + series.value[1];
+                }
+            },
+            lineStyle: {
+                normal: {
+                    type: "solid"
+                }
+            },
+            xAxis: {
+                type: "category",
+                boundaryGap: false,
+                data: days,
+                splitLine: {
+                    show: true,
+                    interval: 3
+                }
+            },
+            yAxis: {
+                type: "value",
+                axisLabel: {
+                    formatter: "{value} %"
+                }
+            },
+            series: [ {
+                name: "警情处理",
+                type: "line",
+                stack: "总量",
+                symbol: "circle",
+                symbolSize: [ 10, 10 ],
+                color: [ "#4083c7" ],
+                data: data,
+                areaStyle: {
+                    normal: {
+                        color: "#e8f2fc"
+                    }
+                }
+            } ]
+        };
+        myChart.setOption(option, true);
+        return myChart;
+    }
+})();})();})</script>
+    <!--e:主题部分-->
+
+</body>
+
+</html>
