@@ -1,0 +1,36 @@
+.chargeContent{
+	position:relative;
+}
+.chargeContent input{
+	color:#000
+}
+.chargeContent .bg-title-charge{
+	top:-44px;
+	position:absolute;
+	left:50%;
+	margin-left:-47px;
+}
+.chargeContent .chargeInfo>li{
+	background: url(../../public/images/kuang.png) no-repeat center top;
+	height: 135px;
+	text-align: center;
+}
+.chargeContent .gold50{
+	background-position: -337px -221px;
+	width: 62px;
+	height: 63px;
+}
+.chargeContent .gold500{
+	background-position:-337px -67px;
+	width: 69px;
+	height: 63px;
+}
+.chargeContent .gold1000{
+	background-position: -337px 0px;
+	width: 72px;
+	height: 63px;
+}
+.chargeContent input:focus, .chargeContent  textarea:focus,.chargeContent  button:focus, .chargeContent select:focus {
+	outline: 0;
+	border: 1px solid #ff8801;
+}

@@ -1,0 +1,27 @@
+.userContent .bg-title-user{
+	top: -54px;
+	position:absolute;
+	left:50%;
+	margin-left:-71.5px;
+}
+.userContent{
+	position:relative;
+}
+.userContent .bg-user-mask{
+	margin: -20px 0 0 -10px;
+}
+.userContent .list-block{
+	width: 59px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	height: 54px;
+}
+.userContent ul li .text-gradient{
+	width: 74px;
+	text-align:right;
+	margin-right: 5px;
+}
+.userContent ul li.col8{
+	margin-left:-20px
+}

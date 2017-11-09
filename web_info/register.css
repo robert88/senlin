@@ -1,0 +1,86 @@
+body{
+	background-position: center 0;
+	background-size: auto 100%;
+	background-image: url(../public/images/mijing.jpg);
+	background-repeat: no-repeat;
+}
+.main-body{
+	position:absolute;
+	top:50%;
+	right:0;
+	left:0;
+	margin-top:-15.4375rem;
+	background-image: url(../public/images/registerbg.png);
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: 100% 30.875rem;
+	height:30.875rem;
+}
+.register-title{
+	display: block;
+	background-position: 0px -143px;
+	width: 178px;
+	height: 53px;
+	margin:0 auto;
+}
+.form-block{
+	padding-top: 1rem;
+}
+.ipt{
+	background-color:transparent;
+	font-size: 0.875rem;
+	border:none;
+	color:#fff;
+}
+.ipt:focus{
+	border:none;
+}
+.ipt-label-block{
+	padding:  0px 8% 0px 32%;
+	margin-bottom: 1rem;
+}
+.ipt-label {
+	width: 32%;
+	text-align: left;
+	padding-right:3px;
+	padding-left:5%;
+}
+.mobileCodeBtn,
+.captcha-img{
+	position:absolute;
+}
+.captcha-img{
+	width:65px;
+	/*height:18px;*/
+	/*top:8px;*/
+	height:1.125rem;
+	top:0.5rem;
+	left: 38%;
+}
+.mobileCodeBtn{
+	top:5px;
+	left: 34%;
+}
+.form-radio{
+	opacity: 0.4;
+}
+.form-radio.checked{
+	opacity: 1;
+}
+.form-radio.sixFemale{
+	background-image: url(../public/images/iconItem.png);
+	background-position: -3.75rem -11.625rem;
+	background-size:18rem 17.8125rem;
+	width:3.0625rem;
+	height: 3.0625rem;
+	display:inline-block;
+}
+.form-radio.sexMale{
+	background-image: url(../public/images/iconItem.png);
+	background-position: -14.8125rem -11.25rem;
+	background-size:18rem 17.8125rem;
+	width: 2.6875rem;
+	height: 2.6875rem;
+	display:inline-block;
+}
+.form-radio input{display: none}

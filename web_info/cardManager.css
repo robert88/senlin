@@ -1,0 +1,12 @@
+.dl-tips{
+	background: rgba(255, 204, 51,0.8);
+}
+.dl-tips-success .dl-tips-text{
+	color:#000;
+}
+.main-home-body .main-body .ipt-label-block{
+padding:0 10% 0 33%;
+}
+.ipt-label{
+width:30%;
+}

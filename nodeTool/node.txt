@@ -1,4 +1,0 @@
-npm install -g clean-css
-npm install -g uglify-js@1
-npm install -g images
-npm install node-xlsx

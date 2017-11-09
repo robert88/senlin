@@ -1,0 +1,56 @@
+<div class="main-home-body realnameAuthBody">
+	<header class="wrap bg-yellow tc fs20">
+		<a onclick="history.back(-1)"><i class="bg-props-arrow bg-props" ></i></a><span>实名认证</span>
+	</header>
+	<div class="wrap J-body main-body">
+		<form class="form-block pt20" id="step01">
+			<fieldset class="ipt-label-block  J-input-focus mt20">
+				<label class="ipt-label ">真实姓名：</label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="truename" type="text" tabindex="1"
+						   placeholder="请填写真实姓名"
+						   class="ipt"
+						   check-type="required"
+						   data-required-msg="请填写真实姓名!"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" >
+				<label class="ipt-label ">身份证号码：</label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="cardid" type="text" tabindex="1"
+						   placeholder="请填写身份证号码"
+						   class="ipt"
+						   check-type="required cardid"
+						   data-idcard-msg="请填写身份证号码!"
+						   data-focus="true">
+				</div>
+
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" style=" height: 4.5625rem;">
+				<label class="ipt-label ">证件正面：</label>
+
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input class="J-upload-file-path" name="cardid_front" type="hidden" tabindex="1" check-type="required" data-required-msg="请上传证件正面!">
+					<a class="bg-props bg-props-uploadBg"  style="position: relative"><input type="file" class="uploadIptFile J-input-file"></a>
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" style=" height: 4.5625rem;">
+				<label class="ipt-label ">证件反面：</label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input class="J-upload-file-path" name="cardid_back" type="hidden" tabindex="1" check-type="required" data-required-msg="请上传证件反面!">
+					<a class="bg-props bg-props-uploadBg " style="position: relative"><input type="file" class="uploadIptFile J-input-file"></a>
+				</div>
+			</fieldset>
+			<fieldset class=" mt20 pt20 tc" >
+				<a class="J-submitBtn btn-yellow disabled" style="color:#000">确认提交</a>
+			</fieldset>
+		</form>
+		<div class="info-tips bd-radius-5 p20 m20 lh40" style="color:#ff3300;background: #ffc">
+			<p>温馨提示：</p>
+			<p>1.为了保证您的权益，请填写真实的姓名和身份证号码，提交后将不能更改！</p>
+			<p>2.每个身份证号码只能绑定一个账号</p>
+		</div>
+	</div>
+</div>
+

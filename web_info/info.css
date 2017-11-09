@@ -1,0 +1,64 @@
+body{
+color:#fff;
+	font-family: "Adobe 宋体 Std L","宋体";
+	background:#000;
+}
+.main-body dt{
+	background-position: 0px -68px;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	font-size: 30px;
+}
+.main-body dd>.title{
+	background-position: 0px -114px;
+	width: 100%;
+	height: 31px;
+	line-height: 31px;
+	font-size: 20px;
+}
+.main-body dd>p{
+	padding:0 5px;
+	margin-top:5px ;
+}
+.main-body .bg-props{
+	width: 40px;
+	height: 38px;
+	margin-left:10px;
+	margin-right:10px;
+}
+.main-body .Fertilizer1{
+	background-position: -45px -336px;
+}
+.main-body .Fertilizer2{
+	background-position: 0px -377px;
+}
+.main-body .Fertilizer3{
+	background-position: 0px -336px;
+}
+.main-body .Fertilizer4{
+	background-position: -289px -272px;
+}
+.main-body .shengmiye{
+	margin-top:-5px;
+	background-position: -337px -286px;
+}
+.main-body .tulongdao{
+	margin-top:-5px;
+	background-position: -290px -81px;
+}
+.main-body .jiaohuaji{
+	background-position: -241px -272px;
+}
+.main-body .lingshou{
+	width: 60px;
+	margin-top:-10px;
+	background-position:0px -77px;
+}
+.main-body .backBtn{
+	background-image: url(../public/images/iconItem.png);
+	background-position: 0px 0px;
+	display: inline-block;
+	width: 119px;
+	height: 46px;
+}

@@ -1,0 +1,96 @@
+<header>
+	<div class="user-pic bg-user J-dialog" data-class="smallDialog" data-url="/web_info/dialog/user.html">
+		<div class="bg-user-mask bg-user"></div>
+	</div>
+	<div class="header-wrap">
+		<ul class="header-top col">
+			<li class="col6">
+				<div class="bg-props content">
+					<span class="bg-props bg-props-coin"></span>
+					<span class="coin-text"></span>
+				</div>
+			</li>
+			<li class="col6">
+				<div class="bg-props content">
+					<span class="bg-props bg-props-gold"></span>
+					<span class="gold-text"></span>
+				</div>
+			</li>
+		</ul>
+		<ul class="header-bottom col tc">
+			<li class="col03"><div class="charge bg-icon J-dialog" data-id="chargeDialog" data-class="smallDialog" data-url="/web_info/dialog/charge.html"></div></li>
+			<li class="col3"><div class="notice bg-icon J-dialog" data-url="/web_info/dialog/notice.html"></div></li>
+			<li class="col3"><div class="hardword bg-icon J-dialog" data-url="/web_info/dialog/worldSort.html"></div></li>
+			<li class="col02"><div class="setting bg-icon J-dialog" data-id="settingDialog"  data-class="smallDialog"  data-url="/web_info/dialog/setting.html"></div></li>
+		</ul>
+	</div>
+</header>
+<div class="main-body J-body" id="J-body">
+	<!--<canvas id="test" style="position: absolute;left: 0;top: 0;border:1px solid red"></canvas>-->
+	<div class="treeItem" style="left: 678px;top: 169px;" id="tree001"></div>
+	<div class="treeItem" style="left: 598px; top: 332px;" id="tree002"></div>
+	<div class="treeItem" style="left: 424px; top: 344px;" id="tree003"></div>
+	<div class="treeItem" style="left: 238px; top: 413px;" id="tree004"></div>
+	<div class="treeItem" style="left: 237px; top: 568px;" id="tree005"></div>
+	<div class="treeItem" style="left: 382px; top: 644px;" id="tree006"></div>
+	<div class="treeItem" style="left: 578px; top: 680px;" id="tree007"></div>
+	<div class="treeItem" style="left: 866px;top: 605px;" id="tree008"></div>
+	<div class="treeItem" style="left: 927px;top: 453px;" id="tree009"></div>
+	<div class="treeItem" style="left: 557px; top: 489px;" id="tree010"></div>
+	<div class="animalItem disabled"><div class="tips hideToShowAni">邀请二位好友即可激活</div><img src="/public/images/linshou.png"  width="177" height="119"></div>
+	<div class="bg-renwu-zhuzhi2 bg-renwu " style="left: 372px; top: 650px;"></div>
+	<div class="bg-renwu-zhuzhi3 bg-renwu " style="left: 758px; top: 718px;"></div>
+	<div class="bg-renwu-zhuzhi4 bg-renwu " style="left: 882px; top: 644px;"></div>
+	<div class="bg-renwu-zhuzhi5 bg-renwu " style="left: 795px; top: 694px;"></div>
+</div>
+<footer>
+	<ul class="col tc">
+		<!--PAGE.setUrl('#/web_info/homeInfo.html')-->
+		<li class="col02"><a onclick="PAGE.setUrl('#/web_info/homeInfo.html')"><div class="home bg-icon"></div></a></li>
+		<li class="col02"><div class="friend bg-icon J-dialog"  data-url="/web_info/dialog/friendSort.html"></div></li>
+		<li class="col02"><a  class="J-dialog" data-id="dialogSkills"  data-url="/web_info/dialog/skills.html"><span class="skills bg-props"></span> </a></li>
+		<li class="col02"><div class="pocket bg-icon J-dialog" data-url="/web_info/dialog/pocket.html"></div></li>
+		<li class="col02"><div class="goldHouse bg-icon J-dialog" data-url="/web_info/dialog/goldHouse.html"></div></li>
+	</ul>
+</footer>
+<!--<div style="position:fixed;border:3px solid darkgreen;left:0;top:0;z-index:1000;background:darkgreen;color:#fff;text-wrap: break-all" id="tips" ></div>-->
+
+<!--s分享代码-->
+<div class="J-share-btn" style="display: none"></div>
+<div class="mask"></div>
+<article class="share-contain J-share-contain bg-white animate-ease ">
+	<div class="wrap J-share-cancel" id="shareNode">
+		<img src="/public/images/share.png" alt="">
+		<!--<p class="title tc ">-->
+			<!--<span class="text">分享到</span>-->
+		<!--</p>-->
+		<!--<ul class="col tc t-gray mb20 mt20">-->
+			<!--<li class="col3">-->
+				<!--<a class="a-wrap nativeShare" data-app="weixin" >-->
+					<!--<p class="share-img"><img src="/public/images/weixin.png" alt=""></p>-->
+					<!--<p>微信好友</p>-->
+				<!--</a>-->
+			<!--</li>-->
+			<!--<li class="col3">-->
+				<!--<a class="a-wrap nativeShare" data-app="weixinFriend" >-->
+					<!--<p  class="share-img"><img src="/public/images/pengyou.png"  alt=""></p>-->
+					<!--<p>朋友圈</p>-->
+				<!--</a>-->
+			<!--</li>-->
+			<!--<li class="col3">-->
+				<!--<a class="a-wrap nativeShare" data-app="QZone" >-->
+					<!--<p class="share-img"><img src="/public/images/qzone.png" alt=""></p>-->
+					<!--<p>qq空间</p>-->
+				<!--</a>-->
+			<!--</li>-->
+			<!--<li class="col3">-->
+				<!--<a class="a-wrap nativeShare" data-app="sinaWeibo">-->
+					<!--<p class="share-img"><img src="/public/images/sina.png"  alt=""></p>-->
+					<!--<p>新浪微博</p>-->
+				<!--</a>-->
+			<!--</li>-->
+		<!--</ul>-->
+	</div>
+	<div class="header tc t-white J-share-cancel"><button class="btn" id="copy" style="padding: 5px 20px;border:none;display: inline-block;background: rgba(27, 31, 62, 0.5);" data-clipboard-text="1"></button></div>
+</article>
+<!--e分享代码-->

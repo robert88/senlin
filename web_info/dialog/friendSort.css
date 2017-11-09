@@ -1,0 +1,34 @@
+.friendSortContent{
+	position:relative;
+}
+.friendSortContent .bg-title-friend{
+	top: -9px;
+	position:absolute;
+	left:50%;
+	margin-left:-91.5px;
+}
+.friendSortContent .sortInfo{
+	color:#fff;
+}
+.friendSortContent .sortInfo>li{
+	background-position: 4px -160px;
+	width: 326px;
+	height: 26px;
+	line-height: 26px;
+}
+.friendSortContent .sortInfo>li:first-child{
+margin-top: 10px;
+}
+.friendSortContent .sortInfoControl{
+color:#fff;
+}
+.friendSortContent .sortInfoControl .prev {
+	background-position: -245px -56px;
+	width: 36px;
+	height: 17px;
+}
+.friendSortContent .sortInfoControl .next {
+	background-position: -198px -56px;
+	width: 37px;
+	height: 17px;
+}

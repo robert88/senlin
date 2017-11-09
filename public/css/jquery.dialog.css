@@ -1,0 +1,125 @@
+.dl-dialog {
+    position: fixed;
+    background-image: url(../images/registerbg.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: 100% 30.875rem;
+    height:30.875rem;
+}
+
+.dl-body {
+    width: auto;
+    height: auto;
+    padding: 0px;
+}
+
+
+.dl-header {
+    height: 40px;
+    padding-right: 42px;
+    border-bottom: 2px solid #cb0101;
+}
+.dl-footer{
+    position: absolute;
+    left:0;
+    bottom: -20px;
+    width: 100%;
+    text-align: center;
+    bottom:-20px;
+}
+.dl-footer .backBtn{
+    background-image: url(../images/iconItem.png);
+    background-position: 0px 0px;
+    display: inline-block;
+    width: 119px;
+    height: 2.875rem;
+}
+.dl-mask {
+    opacity: .2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+.dl-title {
+    padding: 0 10px;
+    color: #cb0101;
+    font-weight: 700;
+    height: 100%;
+    line-height: 2.8125rem;
+    font-size: 1.125rem;
+}
+
+.dl-tips {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-bordder-radius: 5px;
+    -o-user-select: 5px;
+    background:rgba(103, 178, 195,0.8);
+}
+
+.dl-alert {
+    border: 2px solid #d9d6d6;
+    width: auto;
+    border-radius: 5px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dddddd), to(#ffffff));
+}
+
+.dl-alert .dl-header {
+    padding-left: 20px;
+    border-bottom: 2px solid #d9d6d6;
+    color: #000;
+    height:1.875rem;
+    line-height: 1.875rem;
+}
+.dl-tips-img{
+    display:inline-block;
+    width:1.75rem;
+    height:1.75rem;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+.dl-tips-text{
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:10px;
+}
+.dl-tips-error .dl-tips-img{
+    background-image: url(dl-img/tips-error.png);
+}
+.dl-tips-info .dl-tips-img{
+    background-image: url(dl-img/tips-info.png);
+}
+.dl-tips-success .dl-tips-img{
+    background-image: url(dl-img/tips-success.png);
+}
+.dl-tips-warn .dl-tips-img{
+    background-image: url(dl-img/tips-warn.png);
+}
+.dl-tips-error .dl-tips-text{
+   color:#da0e0e;
+}
+.dl-tips-info .dl-tips-text{
+  color:#0b6b3b
+}
+.dl-tips-success .dl-tips-text{
+   color:#95c53e
+}
+.dl-tips-warn .dl-tips-text{
+   color:#ffc600
+}
+.dl-load{
+    background: url(dl-img/loading.gif) no-repeat;
+    width: 16px;
+    height:16px;
+}
+
+.dl-dialog .bg-title-confirm{
+    top:-4px;
+    position:absolute;
+    left:50%;
+    margin-left:-45px;
+}

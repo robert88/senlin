@@ -1,0 +1,25 @@
+.dl-tips{
+	background: rgba(255, 204, 51,0.8);
+}
+.dl-tips-success .dl-tips-text{
+	color:#000;
+}
+.dl-dialog {
+	background: rgba(255,255,255,0.9);
+	color:#000;
+
+}
+.dl-close{
+	color: #999;
+}
+.ipt-label {
+	width: 44%;
+}
+.ipt-label-block {
+	padding: 0px 0% 0px 46%;
+}
+.ipt {
+	line-height: 2rem;
+	font-size: 0.85rem;
+	height: 2rem;
+}

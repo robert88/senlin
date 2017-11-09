@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>警情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
+
+    <!--start mergeCss:main.min-->
+    <link rel="stylesheet" type="text/css" href="/public/css/common/layui.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/icomoon/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/common/common.css">
+    <!--end mergeCss-->
+
+    <!--start mergeJs:lib.min-->
+    <script src="/public/js/lib/jquery-1.12.4.js"></script>
+    <script src="/public/js/common/prototype.js"></script>
+    <script src="/public/js/module/lay/layui.js"></script>
+    <!--<script src="/public/js/common/setREM.js"></script>-->
+    <!--end mergeJs-->
+
+
+</head>
+
+<body>
+
+    <!--s:头部-->
+    <header>
+        <div class="welcome">欢迎你，警务编号0122 <a class="edit">[ <span>编辑</span> ]</a></div>
+        <div class="tips"><i class="color-icon-clock"></i> <span class="layui-circle msgNum layui-bg-danger">3</span></div>
+        <div class="right">
+            <div class="search "><input type="text" class="layui-input" placeholder="关键字搜索"><i class="icon-search2"></i></div>
+            <div class="login layui-circle layui-bg-danger">
+                <a href="#/web/01login.html"><i class="icon-power"></i></a></div>
+        </div>
+
+    </header>
+    <!--e:头部-->
+
+    <!--s:导航-->
+    <nav>
+        <div class="title">
+            <img src="/public/images/logo.png" alt="">
+        </div>
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-this">
+                <a class="a-wrap" href="#/web/02home.html">
+                    <p class="icon-wrap"><i class="icon-home"></i></p>
+                    <p class="text">首页</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="#/web/04policeRecord.html">
+                    <p class="icon-wrap"><i class="icon-post"></i></p>
+                    <p class="text">接警登记</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="#/web/06.1alarmRecord.html">
+                    <p class="icon-wrap"><i class="icon-form"></i></p>
+                    <p class="text">警情记录</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="#/web/07.1supervisionPotal.html">
+                    <p class="icon-wrap"><i class="icon-security"></i></p>
+                    <p class="text">警务监督</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <i class="tips"></i>
+                <a class="a-wrap" href="#/web/08overdue.html">
+                    <p class="icon-wrap"><i class="icon-information"></i></p>
+                    <p class="text">超期预警</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="#/web/05.1disposalFeedbackSearch.html">
+                    <p class="icon-wrap"><i class="icon-sms"></i></p>
+                    <p class="text">警情处置反馈</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="#/web/09dataAnalysis.html">
+                    <p class="icon-wrap"><i class="icon-time"></i></p>
+                    <p class="text">数据分析</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="#/web/10.1caseSearch.html">
+                    <p class="icon-wrap"><i class="icon-search1"></i></p>
+                    <p class="text">案件查询</p>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a class="a-wrap" href="#/web/11.docManage.html">
+                    <p class="icon-wrap"><i class="icon-note"></i></p>
+                    <p class="text">档案管理</p>
+                </a>
+            </li>
+        </ul>
+
+        <div class="bottom">
+            <a class="a-wrap" href="#/web/03.2setSystem.html">
+                <p class="icon-wrap"><i class="icon-set1"></i></p>
+                <p class="text">设置</p>
+            </a>
+        </div>
+    </nav>
+    <!--e:导航-->
+    <!--s:主题部分-->
+    <div id="pageCss"></div>
+    <div id="page"></div>
+    <div id="pageJs"></div>
+    <!--e:主题部分-->
+
+</body>
+
+</html>

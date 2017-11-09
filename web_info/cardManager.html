@@ -1,0 +1,66 @@
+<div class="main-home-body fs16">
+	<header class="wrap bg-yellow tc fs20">
+		<a onclick="history.back(-1)"><i class="bg-props-arrow bg-props" ></i></a><span>提现账号管理</span>
+	</header>
+	<div class="wrap J-body main-body">
+		<form class="form-block pt20" id="withdrawalForm">
+			<fieldset class="ipt-label-block  J-input-focus mt20">
+				<label class="ipt-label ">开户姓名：</label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="account" type="text" tabindex="1"
+						   placeholder="请填写真实开户姓名"
+						   class="ipt"
+						   check-type="required"
+						   data-required-msg="请填写真实开户姓名!"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" >
+				<label class="ipt-label ">收款银行：</label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<select name="bank_id" class="ipt"
+							check-type="required"
+							data-idcard-msg="请选择开户行!">
+						<option value="">请选择</option>
+						<option value="1">中国农业银行</option>
+						<option value="2">中国银行</option>
+						<option value="3">中国建设银行</option>
+						<option value="4">中国工商银行</option>
+						<option value="5">交通银行</option>
+						<option value="6">中国邮政储蓄银行</option>
+						<option value="7">招商银行</option>
+						<option value="8">兴业银行</option>
+						<option value="9">民生银行</option>
+						<option value="10">平安银行</option>
+					</select>
+				</div>
+
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" >
+				<label class="ipt-label ">收款账号：</label>
+
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="card" type="text" tabindex="1"
+						   placeholder="收款银行卡号"
+						   class="ipt"
+						   check-type="required cardid"
+						   data-idcard-msg="银行卡格式不正确!"
+						   data-focus="true">
+				</div>
+
+			</fieldset>
+			<fieldset class=" mt20 pt20 tc" >
+				<a class="J-submitBtn btn-yellow disabled">
+					确认提交
+				</a>
+			</fieldset>
+		</form>
+		<!--提现账户提交成功-->
+		<div class="info-tips bd-radius-5 p20 m20 lh40 fs14" style="color:#ff3300;background: #ffc">
+			<p>温馨提示：</p>
+			<p>1.绑定的收款账户开户人需与实名认证姓名一致！</p>
+			<p>2.请仔细确认您的账号是否填写正确。</p>
+			<p>3.收款账户不能重复绑定，且一周只能修改一次</p>
+		</div>
+	</div>
+</div>

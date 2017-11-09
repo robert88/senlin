@@ -2,15 +2,10 @@
 (function () {
 
 	//等比
-	function getResize(max, min, cur, maxCur, minCur) {
-		return (cur - min) * (maxCur - minCur) / (max - min) + minCur;
-	}
-
+	var getResize = PAGE.getResize
 	//获取范围
-	function getRagen(val, max, min) {
-		return (val <= min) ? min : ((val <= max) ? val : max);
-	}
-
+	var getRagen = PAGE.getRagen
+	
     //提前初始化样式表
 	function initStyle() {
 		$("head").append("<style>{0}</style>".tpl(styleStr.join("")));

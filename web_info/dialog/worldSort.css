@@ -1,0 +1,37 @@
+.worldSortContent .bg-title-world{
+	background-position: -191px -77px;
+	width: 174px;
+	height: 55px;
+	top:-5px;
+	position:absolute;
+	left:50%;
+	margin-left:-87px;
+}
+.worldSortContent{
+	position:relative;
+}
+.worldSortContent .sortInfo{
+	color:#fff;
+}
+.worldSortContent .sortInfo>li{
+	background-position: 4px -160px;
+	width: 326px;
+	height: 26px;
+	line-height: 26px;
+}
+.worldSortContent .sortInfo>li:first-child{
+margin-top: 10px;
+}
+.worldSortContent .sortInfoControl{
+color:#fff;
+}
+.worldSortContent .sortInfoControl .prev {
+	background-position: -245px -56px;
+	width: 36px;
+	height: 17px;
+}
+.worldSortContent .sortInfoControl .next {
+	background-position: -198px -56px;
+	width: 37px;
+	height: 17px;
+}

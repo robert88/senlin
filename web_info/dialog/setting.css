@@ -1,0 +1,27 @@
+.settingContent .bg-title-setting{
+	top:-23px;
+	position:absolute;
+	left:50%;
+	margin-left:-46px;
+}
+.settingContent{
+	position:relative;
+}
+.settingContent .pt33{
+	padding-top: 33px;
+}
+.settingContent .videoSetting.on{
+	background-position: -110px -240px;
+	width: 42px;
+	height: 41px;
+}
+.settingContent .videoSetting.off{
+	background-position: -214px -240px;
+	width: 42px;
+	height: 41px;
+}
+.settingContent .loginout{
+	background-position: -162px -240px;
+	width: 37px;
+	height: 41px;
+}

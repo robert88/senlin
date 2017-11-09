@@ -7,7 +7,7 @@
 	var $pageJs = $("#pageJs");
 	var $pageLoad = $("#pageLoad");
 	var $body = $("body");
-
+	var pathmap = {};
 
 	var PAGE = window.PAGE||{};
 
@@ -186,7 +186,7 @@
 	 * */
 	PAGE.getHash = function (hash,home) {
 
-		home = home==false?"":this.HOME
+		home = home==false?"":this.HOME;
 
 		 hash = hash||window.location.hash.trim();
 
@@ -266,48 +266,110 @@
 		}
 	}
 
+	function load(paths, callback, loadFileType) {
+		paths = $.toArray(paths);
+		var loadStackHandle = [];
+		for (var i = 0; i < paths.length; i++) {
+			if (!pathmap[paths[i]]) {
+				pathmap[paths[i]] = {status: "ready"};
+			}
+			loadStackHandle.push({src: paths[i]});
+		}
+		var len = loadStackHandle.length;
+		if (len) {
+			loadStackHandle[len - 1].callback = callback;
+		}//最后一个js带上callback
+		append(loadStackHandle, loadFileType);
+	}
+	function append(loadStackHandle, loadFileType) {
+		if (loadStackHandle.length == 0) {
+			return;
+		}
+		var handle = loadStackHandle.shift();
+		var path = handle.src;
+		if (pathmap[path].status != "ready"){
+			return
+		}
+		pathmap[path].status = "loadding";
+		var loadFileDom;
+		if (loadFileType == "link") {
+			loadFileDom = document.createElement("link");
+			$pageCss.append(loadFileDom);
+
+		} else {
+			loadFileDom = document.createElement("script");
+			$pageJs.append(loadFileDom);
+		}
+
+		loadFileDom.onerror = function () {
+			console.error(path + " load fail!");
+			pathmap[path].status = "loaded";
+		};
+		loadFileDom.onload = loadFileDom.onreadystatechange = function () {
+			pathmap[path].status = "loaded";
+		};
+		if (loadFileType == "link") {
+			loadFileDom.type = "text/css";
+			loadFileDom.rel = "stylesheet";
+			loadFileDom.href = path
+		} else {
+			loadFileDom.type = "text/javascript";
+			loadFileDom.src = path
+		}
+		waitload(path, handle, loadStackHandle, loadFileType)
+	}
+
+	function waitload(path, handle, loadStackHandle, loadFileType) {
+		if (pathmap[path].status == "loaded") {
+			if (typeof handle.callback == "function") {
+				handle.callback();
+			}
+			append(loadStackHandle, loadFileType)
+		} else {
+			setTimeout(function () {
+				waitload(path, handle, loadStackHandle, loadFileType);
+			}, 50)
+		}
+	}
+
 	/*
 	*自己调用只能调用一次，不然会出现死循环
 	* */
 
 	function pageLoadSuccess(innerHtml,config){
 
+		pathmap = {};
+		$pageCss.html("");
+		$pageJs.html("");
 		destroyPage();
 
 		PAGE.handlerInclude(innerHtml,function (innerHtml,subConfigs) {
 			//优先加载css
+			var cssFile=[],jsFile=[];
 			if(config.params.css) {
-				$pageCss.html('<link rel="stylesheet" type="text/css" href="{0}.css?v={1}">'.tpl(config.action, config.params.css));
-			} else {
-				$pageCss.html("");
+				cssFile.push("{0}.css?v={1}".tpl(config.action,PAGE.version));
+			}
+			if(config.params.js) {
+				jsFile.push("{0}.js?v={1}".tpl(config.action, PAGE.version));
 			}
 			$.each(subConfigs,function (idx,val) {
 				if(val.params.css) {
-					$pageCss.append('<link rel="stylesheet" type="text/css" href="{0}.css?v={1}">'.tpl(val.action, val.params.css));
+					cssFile.push("{0}?v={1}.css".tpl(val.action, PAGE.version));
+				}
+				if(val.params.js) {
+					jsFile.push("{0}?v={1}.js".tpl(val.action, PAGE.version));
 				}
 			});
-			//添加内容
-			$pageLoadContain.html("<div id='pageDsync'>"+innerHtml+"</div>");
+			//加载样式
+			load(cssFile,function () {
+				//加载内容
+				$pageLoadContain.html("<div id='pageDsync'>"+innerHtml+"</div>");
+				//加载js
+				load(jsFile,function () {
+					$("#pageDsync").trigger("pagecontentloaded");
+				},"script");
+			},"link");
 
-			//加载js,必须创建script标签才会执行
-			//css加载必须在js前，渲染也必须在js前，所以js和css不应该在同一线程里面
-			setTimeout(function () {
-				if(config.params.js) {
-					var s = document.createElement("script");
-					$pageJs.html(s);
-					s.src = "{0}.js?v={1}".tpl(config.action, config.params.js);
-				}else{
-					$pageJs.html("");
-				}
-				$.each(subConfigs,function (idx,val) {
-					if(val.params.js) {
-						var subJs = document.createElement("script");
-						$pageJs.append(subJs);
-						subJs.src = "{0}.js?v={1}".tpl(val.action, val.params.js);
-					}
-				});
-				$("#pageDsync").trigger("pagecontentloaded");
-			},0);
 		});
 
 	}
@@ -376,7 +438,26 @@
 			}
 		});
 	};
+	PAGE.setUrl = function (hash) {
+		//去掉invite_code
 
+		var token = $.cookie("login_token");
+		var invite_code = $.cookie("invite_code");
+
+		var url_invite = "";
+		hash = hash.replace(/(\??|&?)invite_code=?([^&]+)&?/,function(m,m1,m2){url_invite=m2;return m1;})
+		//没有登陆就是别人的邀请码
+		if (!token) {
+			if(url_invite){
+				$.cookie("invite_register_code",url_invite);
+			}
+			url_invite = $.cookie("invite_register_code");
+			window.location.hash = (hash.indexOf("?")!=-1)?(hash+"&invite_code="+url_invite):(hash+"?invite_code="+url_invite);
+		//登陆就是自己的邀请码
+		}else{
+			window.location.hash = (hash.indexOf("?")!=-1)?(hash+"&invite_code="+invite_code):(hash+"?invite_code="+invite_code);
+		}
+	}
 	/**
 	 *国际化
 	 * */
@@ -397,6 +478,7 @@
 	 *监听hashchange事件切换页面，监听事件load事件
 	 * */
 	$(window).on("hashchange", function() {
+		//window.location.reload();
 		hashChange();
 	});
 

@@ -1,0 +1,9 @@
+.dl-tips{
+	background: rgba(255, 204, 51,0.8);
+}
+.dl-tips-success .dl-tips-text{
+	color:#000;
+}
+#step02{
+	display: none;
+}

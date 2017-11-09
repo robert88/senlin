@@ -1,0 +1,104 @@
+<div class="main-home-body">
+	<header class="wrap bg-yellow tc fs20">
+		<a onclick="history.back(-1)"><i class="bg-props-arrow bg-props" ></i></a><span>元宝明细</span>
+	</header>
+	<div class="wrap J-body main-body tc lh40">
+		<ul class="col bg-yellow mt20 ">
+			<li class="col6">元宝总额</li>
+			<li class="col6">可提现元宝</li>
+		</ul>
+		<ul class="col mt20 ">
+			<li class="col6"><span class="userGold"></span></li>
+			<li class="col6"><span class="userWithdrawalGold"></span></li>
+		</ul>
+
+		<div class="mt20 bg-yellow J-withdrawal-btn">立即提现</div>
+
+		<!--提现账户提交成功-->
+		<div class="info-tips bd-radius-5 p20 m20 tl fs14">
+			<p>温馨提示：</p>
+			<p>1.最低限额100金币,且为整数，手续费5%。</p>
+			<p>2.为了您的账号安全，每次元宝提现的最高限额为50000
+				元宝、如果您有更高的需求，请与客服联系。</p>
+			<p>3.提交申请后，周一至周五24小时到账，周六周日节假日
+				顺延（节假日提前通知），周五下午提现周一上午到账</p>
+			<p>4.请确保您的银行开户名与银行卡号是否对应，如不对应，
+				请重新绑定您的提现账户</p>
+		</div>
+
+		<ul class="col bg-yellow mt20 ">
+			<li class="col4">时间</li>
+			<li class="col4">收入/支出</li>
+			<li class="col4">金额</li>
+		</ul>
+		<ul class="col logInfo"></ul>
+	</div>
+	<div style="display: none" id="withdrawlDialog">
+		<form class="form-block pt20" id="step01">
+			<fieldset class="ipt-label-block  J-input-focus mt20">
+				<label class="ipt-label ">当前可提现额为：</label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<span class="userWithdrawalGold"></span>元宝
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" >
+				<label class="ipt-label ">输入提现金额：</label>
+
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="sum"  type="text" tabindex="1"
+						   placeholder="最低提现额100以上，且为整数"
+						   class="ipt sum"
+						   check-type="required number100"
+						   data-idcard-msg="请填写提现额!"
+						   data-focus="true">
+				</div>
+
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" >
+				<label class="ipt-label ">开户姓名：</label>
+
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<span class="userName"></span>
+				</div>
+
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" >
+				<label class="ipt-label ">收款银行：</label>
+
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<span class="bank_id"></span>
+				</div>
+
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" >
+				<label class="ipt-label ">收款账号：</label>
+
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<span class="card"></span>
+				</div>
+
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus mt20" >
+				<label class="ipt-label ">输入提现密码：</label>
+
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="password" type="password" tabindex="1"
+						   placeholder="输入提现密码"
+						   class="ipt"
+						   check-type="required"
+						   data-idcard-msg="请填写身份证号码!"
+						   data-focus="true">
+				</div>
+
+			</fieldset>
+			<div class=" mt20 pt20 tc" >请认真核对您的账号是否正确</div>
+			<!--提现成功-->
+			<!--预计1-3个工作日到账-->
+			<fieldset class=" mt20 pt20 tc" >
+				<a class="J-submitBtn btn-yellow disabled">
+					确认申请
+				</a>
+			</fieldset>
+		</form>
+	</div>
+</div>

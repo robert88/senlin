@@ -1,0 +1,107 @@
+<div class="wrap main-body">
+	<div class="register-title bg-title"></div>
+		<form class="form-block " id="registerForm">
+			<fieldset class="ipt-label-block  J-input-focus ">
+				<label class="ipt-label "><span class=" text-gradient-info" data-text="手机号码：">手机号码：</span></label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="mobile" type="text" tabindex="1"
+						   placeholder="请手机号码"
+						   class="ipt ipt-register"
+						   check-type="required,mobile"
+						   data-mobile-msg="请填写正确的手机号!"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus ">
+				<label class="ipt-label "><span class=" text-gradient-info" data-text="游戏昵称：">游戏昵称：</span></label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="name" type="text" tabindex="1"
+						   placeholder="请输入昵称"
+						   class="ipt ipt-register"
+						   check-type="required"
+						   data-required-msg="请填写游戏昵称!"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus J-label-radio-group">
+				<label class="ipt-label "><span class=" text-gradient-info" data-text="性别：">性别：</span></label>
+				<div class="ipt-inline vm" style="width: 45%;">
+					<div class="ipt-radius J-label-box form-radio sixFemale checked" >
+						<input type="radio" name="sex" value="1" checked="checked" check-type="required"  data-required-msg="请选择性别!">
+					</div>
+				</div>
+				<div class="ipt-inline vm" style="width: 45%;">
+					<div class="ipt-radius J-label-box form-radio  sexMale" >
+						<input type="radio" name="sex"  value="0"  check-type="required" data-required-msg="请选择性别!">
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus ">
+				<label class="ipt-label "><span class=" text-gradient-info" data-text="登陆密码：">登陆密码：</span></label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="password" type="password" tabindex="1" id="J-password"
+						   placeholder="请输入登陆密码"
+						   class="ipt ipt-register"
+						   check-type="required,password"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus ">
+				<label class="ipt-label "><span class=" text-gradient-info" data-text="确认密码：">确认密码：</span></label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="repassword" type="password" tabindex="1"
+						   placeholder="请确认密码"
+						   class="ipt ipt-register"
+						   data-pswagain="#J-password"
+						   check-type="required,pswagain"
+						   data-pswagain-msg="密码不一致!"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus ">
+				<label class="ipt-label "><span class=" text-gradient-info" data-text="邀请码：">邀请码：</span></label>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="invite" type="text" tabindex="1"
+						   placeholder="请确认邀请码"
+						   class="ipt ipt-register"
+						   data-pswagain-msg="请填写邀请码!"
+						   check-type="required"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus " style="padding: 0px 8% 0px 63%;">
+				<label class="ipt-label " style="width: 43%"><span class=" text-gradient-info" data-text="图片验证码：">图片验证码：</span></label>
+				<img class="captcha-img J-captcha">
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="captcha" type="text" tabindex="1"
+						   placeholder="请图片验证码"
+						   class="ipt ipt-register"
+						   check-type="required"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="ipt-label-block J-input-focus "  style="padding: 0px 8% 0px 63%;">
+				<label class="ipt-label " style="width: 43%"><span class=" text-gradient-info" data-text="短信验证：">短信验证：</span></label>
+				<a class=" btn-link-register J-getMobileCode mobileCodeBtn">
+					<label class="text-gradient vm letter-space8" data-text="获取">获取</label>
+				</a>
+				<div class="ipt-inline ipt-radius J-validItem validItem">
+					<input name="code" type="text" tabindex="1"
+						   placeholder="请短信验证"
+						   class="ipt ipt-register"
+						   check-type="required"
+						   data-focus="true">
+				</div>
+			</fieldset>
+			<fieldset class="pt20" style="margin:1rem 0 0 13%">
+				<div class="ipt-inline" style="width: 45%">
+					<a class="btn-link-register" onclick="PAGE.setUrl('#/web_info/login.html')"><label class="text-gradient vm letter-space8" data-text="返回">返回</label></a>
+				</div>
+				<div class="ipt-inline" style="width: 45%">
+					<a class="J-submitBtn btn-link-register disabled">
+						<label class="text-gradient vm letter-space8" data-text="注册">注册</label>
+					</a>
+				</div>
+			</fieldset>
+		</form>
+</div>

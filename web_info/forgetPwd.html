@@ -1,0 +1,65 @@
+<div class="main-home-body">
+<header class="wrap bg-yellow tc fs20">
+	<a onclick="history.back(-1)"><i class="bg-props-arrow bg-props" ></i></a><span>找回密码</span>
+</header>
+<div class="wrap J-body main-body">
+	<form class="form-block pt20" id="step01">
+		<fieldset class="ipt-label-block  J-input-focus mt20">
+			<label class="ipt-label ">输入账号：</label>
+			<div class="ipt-inline ipt-radius J-validItem validItem">
+				<input name="mobile" type="text" tabindex="1"
+					   placeholder="手机号码"
+					   class="ipt"
+					   check-type="required,mobile"
+					   data-mobile-msg="请填写正确的手机号!"
+					   data-focus="true">
+			</div>
+		</fieldset>
+		<fieldset class="ipt-label-block J-input-focus mt20" style="position: relative">
+			<label class="ipt-label ">验证码：</label>
+
+			<div class="ipt-inline ipt-radius J-validItem validItem">
+				<input name="code" type="text" tabindex="1"
+					   placeholder="请短信验证"
+					   class="ipt"
+					   check-type="required"
+					   data-focus="true">
+			</div>
+			<a class="bg-yellow J-getMobileCode mobileCodeBtn" style="position:absolute;right:0;top:4px;padding:0 1rem">获取验证码</a>
+
+		</fieldset>
+		<fieldset class=" mt20 pt20 tc" >
+			<a class="J-submitBtn btn-yellow disabled">
+				下一步
+			</a>
+		</fieldset>
+	</form>
+	<form class="form-block pt20" id="step02">
+		<fieldset class="ipt-label-block J-input-focus mt20">
+			<label class="ipt-label ">新密码：</label>
+			<div class="ipt-inline ipt-radius J-validItem validItem">
+				<input name="password" type="password" tabindex="1" id="J-password"
+					   placeholder="请输入登陆密码"
+					   class="ipt "
+					   check-type="required,password"
+					   data-focus="true">
+			</div>
+		</fieldset>
+		<fieldset class="ipt-label-block J-input-focus mt20">
+			<label class="ipt-label ">确认密码：</label>
+			<div class="ipt-inline ipt-radius J-validItem validItem">
+				<input name="repassword" type="password" tabindex="1"
+					   placeholder="请确认密码"
+					   class="ipt"
+					   data-pswagain="#J-password"
+					   check-type="required,pswagain"
+					   data-pswagain-msg="密码不一致!"
+					   data-focus="true">
+			</div>
+		</fieldset>
+		<fieldset class="mt20 pt20 tc" style="margin:1rem 0 0 13%">
+			<a class="J-submitBtn btn-yellow disabled">确定</a>
+		</fieldset>
+	</form>
+</div>
+</div>
